@@ -16,8 +16,9 @@ npm install build-url --save
 
 Usage in the browser:
 
-```
+```html
 <script src="../path/to/lib/build-url.js"></script>
+
 <script>
 buildUrl('http://example.com', {
   path: 'about',
@@ -31,7 +32,7 @@ buildUrl('http://example.com', {
 ```
 
 Usage with ES6 modules:
-```
+```js
 import buildUrl from '../path/to/lib/build-url';
 
 buildUrl('http://example.com', {
@@ -46,7 +47,7 @@ buildUrl('http://example.com', {
 
 Usage with node:
 
-```
+```js
 var buildUrl = require('build-url');
 
 buildUrl('http://example.com', {
@@ -63,7 +64,7 @@ buildUrl('http://example.com', {
 
 The `buildUrl` function accepts two arguments. The first is a URL e.g. `http://example.com`. The second is an object where you can specify the `path`, `hash`, `lowerCase`, and an object of `queryParams`:
 
-```
+```js
 buildUrl('http://example.com', {
   path: 'about',
   hash: 'contact',
@@ -78,7 +79,7 @@ buildUrl('http://example.com', {
 
 If you pass an array to the `queryParams` object, it will be transformed to a comma separated list:
 
-```
+```js
 buildUrl('http://example.com', {
   queryParams: {
     foo: 'bar',
@@ -91,7 +92,7 @@ buildUrl('http://example.com', {
 
 If you want to change the `path`, `hash` and `queryParams` case to all lowercase  then pass `lowerCase` as true in arguments, default value of this will be `false`:
 
-```
+```js
 buildUrl('http://example.com', {
   path: 'AbouT',
   hash: 'ConTacT',
@@ -107,7 +108,7 @@ buildUrl('http://example.com', {
 
 If you pass an array to the `queryParams` object, and want that they should not be comma separated use `disableCSV`:
 
-```
+```js
 buildUrl('http://example.com', {
   disableCSV: true,
   queryParams: {
@@ -122,7 +123,7 @@ buildUrl('http://example.com', {
 
 If you only want the query string, path, hash, or any combination of the three you can skip the URL parameter or pass in an empty string or null:
 
-```
+```js
 buildUrl('', {
   queryParams: {
     foo: 'bar',
@@ -151,7 +152,7 @@ buildUrl({
 
 Any null values in the `queryParams` object will be treated as empty strings:
 
-```
+```js
 buildUrl('http://example.com', {
   queryParams: {
     foo: 'bar',
