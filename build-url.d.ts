@@ -9,6 +9,10 @@ declare function BuildUrl(
   options?: BuildUrl.BuildUrlOptions
 ): string;
 
+declare function BuildUrl(
+  options: BuildUrl.BuildUrlOptions
+): string;
+
 declare namespace BuildUrl {
   export interface BuildUrlOptions {
     path?: string;
