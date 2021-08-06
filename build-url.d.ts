@@ -10,11 +10,13 @@ declare function BuildUrl(
 ): string;
 
 declare namespace BuildUrl {
+  export type ParamValue = string | number | boolean | null;
+
   export interface BuildUrlOptions {
     path?: string;
     hash?: string;
     lowerCase?: boolean;
     disableCSV?: boolean;
-    queryParams?: { [name: string]: string | string[] };
+    queryParams?: { [name: string]: ParamValue | ParamValue[] };
   }
 }
